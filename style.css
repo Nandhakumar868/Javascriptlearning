@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar{
+    background-color: rgb(252, 79, 116);
+    height: 65px;
+    text-align: center;
+    font-size: 26px;
+}
+
+#AddBookButton{
+    float: right;
+    position: absolute;
+    bottom: 30px;
+    left: 95%;
+}
+
+#AddBook{
+    padding: 9px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: white;
+    background-color: rgb(9, 177, 243);
+    border: none;
+}
+
+.container{
+    background-color: rgb(144, 70, 240);
+    height: auto;
+    width: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px;
+    position: absolute;
+    z-index: 1;
+}
+
+#box-container{
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+#box-container p{
+    text-align: left;
+}
+
+.PopupOverlay{
+    position: absolute;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0,0.3);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#popup{
+    background-color: rgba(238, 96, 174,0.6);
+    display: flex;
+    flex-direction: column; 
+    width: 300px;
+    height: 230px; 
+    left: 40%;
+    top: 35%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    position: absolute;
+}
+
+#popup input[type="text"]{
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 2px;
+    margin: 10px;
+    background-color: transparent;
+    outline: none;
+}
+
+#popup textarea{
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 2px;
+    background-color: transparent;
+    outline: none;
+}
+
+#popup::placeholder{
+    color: black;
+}
+
+#adc{
+    display: flex;
+}
+
+.buttons{
+    margin: 3px;
+    padding: 4px;
+}

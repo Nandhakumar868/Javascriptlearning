@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booksky</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script defer src="index.js"></script> -->
+</head>
+<body>
+    <div id="navbar">
+        <h1>Booksky</h1>
+    </div>
+
+    <div class="container">
+        <div id="box-container">
+            <h2>Miracle Morning</h2>
+            <h4>Robin Sharma</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dolore natus optio unde dignissimos sequi quaerat corrupti molestiae cumque fuga.</p>
+        </div>
+        <div id="new-books"></div>
+    </div>
+
+    <div class="PopupOverlay">
+        <div id="popup">
+            <h1>Add New Book</h1>
+            <form>
+                <input type="text" required placeholder="Book Title"  id="bookhead">
+                <input type="text" required placeholder="Author Name"  id="bookauthor">
+                <textarea cols="30" rows="5" placeholder="Description" ></textarea>
+            </form>
+            <div id="adc">
+                <button class="buttons" id="adddbutton">Add</button>
+                <button class="buttons" id="cancelbutton">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="AddBookButton">
+        <button id="AddBook">+</button>
+    </div>
+    <script>
+        let AddButton = document.getElementById("AddBook");
+        let AddNewBooks = document.querySelector(".PopupOverlay");
+        let AddButton1 = document.getElementById("adddbutton");
+        let CancelButton1 = document.getElementById("cancelbutton");
+        let BookName1 = document.getElementById("bookhead");
+        let AuthorName1 = document.getElementById("bookauthor");
+        let Description1 = document.getElementById("bookdesc");
+        let TotalContainer = document.querySelector(".container");
+        let NewContainer = document.getElementById("box-container");
+
+        AddButton.addEventListener("click",()=>{
+            AddNewBooks.style.display = "flex";
+        }
+        );
+
+        CancelButton1.addEventListener("click",(event)=>{
+            event.preventDefault();
+            AddNewBooks.style.display = "none";
+        });
+
+        AddButton1.addEventListener("click",(event)=>{
+            event.preventDefault();
+            let div = document.createElement('div');
+            div.setAttribute('class','box-container');
+            div.innerHTML = `<h2>${BookName1.value}</h2>
+            <h4>${AuthorName1.value}</h4>
+            <p>${Description1.value}</p>`
+            TotalContainer.append(div);
+            console.log(div);
+            AddNewBooks.style.display = "none";
+        });
+    </script>
+</body>
+</html>
